@@ -1,0 +1,19 @@
+h3 {
+    color: white;
+    padding: 20px;
+    margin: 0;
+    background: #6d44b8;
+    ;
+}
+
+a {
+    /* color: #fff; */
+    text-decoration: none;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    padding: .5rem;
+    transition: .6s background;
+}
+
+a:hover {
+    background: rgba(0, 0, 0, 0.9);
+}

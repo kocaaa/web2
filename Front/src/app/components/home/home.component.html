@@ -1,0 +1,23 @@
+<app-header [username]='username'></app-header>
+<a style="cursor: pointer; float: right; margin: 30px;" (click)="addNewMovie()">Add New Movie</a>
+
+<select class="sort-select" style="float: right;" (change)="sortMovies()" [(ngModel)]="sort">
+        <option value="newest">Newest</option>
+        <option value="best">Best Rating</option>
+        <option value="worst">Worst Rating</option>
+</select>
+
+<div style="height: 60px; float: none;"></div>
+
+<p style="text-align: center;" *ngIf="movies.length == 0">You don't have any movies.</p>
+
+<div *ngFor='let movie of movies' class="polina">
+    <p style="float: right; cursor: pointer;"><a style="width: 70%; margin-left: 10px;margin-right: 5px;"
+            (click)="deleteMovie(movie._id)">&nbsp; del</a></p>
+    <p style="float: right; cursor: pointer;"><a style="width: 70%;" (click)="editMovie(movie._id)">
+            &nbsp;&nbsp;edit&nbsp;&nbsp;</a></p>
+    <h3 style="float: right;">Your rating {{movie.rating}} &nbsp;&nbsp;</h3>
+    <h1>{{movie.title}}</h1>
+    <h2>directed by {{movie.director}}</h2>
+    <p>{{movie.description}}</p>
+</div>
